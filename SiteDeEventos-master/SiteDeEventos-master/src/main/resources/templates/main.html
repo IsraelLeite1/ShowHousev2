@@ -1,0 +1,33 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>EventosApp</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+	 <div th:replace="@{fragments/nav} :: navbar"></div>  
+
+	<div class="row">
+						<div class="col-lg-4 col-md-6 mb-4" th:each="tempEvent : ${events}">
+							<div class="card h-100">
+								<a th:href="@{/cart/showInfo(eventId=${tempEvent.id})}"><img class="card-img-top"
+									alt="" src="data:image/jpge;base64,${tempEvent.imagemProd}"></a>
+								<div class="card-body">
+									<h4 class="card-title">
+										<a th:href="@{/cart/showInfo(eventId=${tempEvent.id})}" th:text="'Ingresso: R$ '+${tempEvent.name}"></a>
+									</h4>
+									<h5 th:text="'Ingresso: R$ '+${tempEvent.price}"></h5>
+									
+								</div>
+								<div class="card-footer">
+									<small class="text-muted">&#9733; &#9733; &#9733;
+										&#9733; &#9734;</small>
+								</div>
+							</div>
+						</div>
+				</div>
+</body>
+</html>
+

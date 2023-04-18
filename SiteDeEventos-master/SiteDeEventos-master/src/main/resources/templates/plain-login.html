@@ -1,0 +1,30 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>EventosApp</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div th:replace="@{fragments/navIndex} :: navbar"></div>
+
+	<div class="container">
+		<p th:if="${loginError}" class="error">Wrong user or password</p>
+		<form th:action="@{/authenticateTheUser}" method="post">
+		
+			<div class="form-group">
+				<label for="username">Username</label>: <input type="text"
+					class="form-control" id="username" name="username"
+					autofocus="autofocus" />
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>: <input type="password"
+					class="form-control" id="password" name="password" /> 
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</body>
+</html>

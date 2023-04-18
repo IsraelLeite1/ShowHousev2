@@ -1,0 +1,17 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>EventosApp</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="@{fragments/nav} :: navbar"></div>
+
+		<div class="container">
+			<h5 th:each="event : ${events}" th:text="${event.name}"></h5>
+			<h5 th:each="cartItem : ${cart}" th:text="'Quantidade: '+ ${cartItem.qtd}"></h5>
+		</div>
+</body>
+</html>

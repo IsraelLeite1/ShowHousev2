@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>EventosApp</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4"
+		th:fragment="navbar">
+		<a class="navbar-brand" th:href="@{/showHome}">Home</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarCollapse" aria-controls="navbarCollapse"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto" >
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/event/showAddForm}">Add Evento</a></li>
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/showHouse/showAddForm}">Add Casas de Show</a></li>
+			</ul>
+			<form class="form-inline mt-2 mt-md-0" th:action="@{/logout}"
+				method="post">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/cart/showCart}">Carrinho</a></li>
+						
+					<li class="nav-item"><input class="nav-item" type="submit"
+						value="Logout" /></li>
+				</ul>
+
+			</form>
+		</div>
+	</nav>
+</html>

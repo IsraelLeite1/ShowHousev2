@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>EventosApp</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div th:replace="@{fragments/nav} :: navbar"></div>
+	
+	<div class="container">
+		<form th:action="@{/showHouse/saveShowHouse}"
+			th:object="${showHouse}" method="POST">
+			
+			<div class="form-group">
+				<label for="showHouseName">Nome da Casa</label> 
+				<input type="text" class="form-control" id="showHouseName" 
+				placeholder="Digite o nome da casa" value="${showHouse.name}" th:field="*{name}"/>
+			</div>
+			
+			<div class="form-group">
+				<label for="showHouseCapacity">Capacidade da Casa</label> 
+				<input type="text" class="form-control" id="showHouseCapacity" 
+				placeholder="Digite a capacidade da casa" value="${showHouse.capacity}" th:field="*{capacity}"/>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</body>
+</html>

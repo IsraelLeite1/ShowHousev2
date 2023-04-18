@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>EventosApp</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div th:replace="@{fragments/nav} :: navbar"></div>
+	
+	<div class="container">
+		<form th:action="@{/cart/putInCart}"
+			th:object="${cart}" method="POST">
+		 	
+			<input type="hidden"  th:field="${cart.event}" ></input>
+			<input type="hidden"  th:field="${cart.event.price}" ></input>
+			
+			<div class="form-group">
+				<h4 th:text="'Quantidade de ingressos sobrando: '+${event.qtdTicket}"></h4>
+			</div>
+			
+			 <div class="form-group">
+				<label for="orderQtd">Quantidade de Ingressos</label> 
+				<input type="number" class="form-control" id="orderQtd" 
+				placeholder="Digite a quantidade de ingressos que deseja"  th:field="*{qtd}"/>
+			</div> 
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</body>
+</html>

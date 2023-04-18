@@ -1,0 +1,74 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>EventosApp</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+<meta charset="UTF-8">
+<title>EventosApp</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+
+	<div th:replace="@{fragments/nav} :: navbar"></div>
+
+	<div class="container">
+
+		<div class="row">
+
+			<!-- Post Content Column -->
+			<div class="col-lg-8">
+
+				<!-- Title -->
+				<h1 class="mt-4" th:text="${event.name}"></h1>
+
+				<!-- Author -->
+				<p class="lead">
+					by <a href="#" th:text="${event.client}"></a>
+				</p>
+
+				<hr>
+
+				<!-- Date/Time -->
+				<p th:text="${event.date}"></p>
+
+				<hr>
+
+				<!-- Preview Image -->
+				<img class="img-fluid rounded" src="http://placehold.it/900x300"
+					alt="">
+
+				<hr>
+
+				<!-- Post Content -->
+				<p class="lead" th:text="${event.description}"></p>
+
+				<hr>
+
+				<!-- Sidebar Widgets Column -->
+				<div class="col-md-4">
+
+					<!-- Search Widget -->
+					<div class="card my-4">
+						<h5 class="card-header" th:text="${event.price}"></h5>
+						<div class="card-body">
+							<div class="input-group">
+									<a th:href="@{/cart/showOrderForm(eventId=${param.eventId})}"><button class="btn btn-secondary" type="button">Comprar Agora!</button></a>
+								</span>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<!-- /.row -->
+
+		</div>
+</body>
+</html>

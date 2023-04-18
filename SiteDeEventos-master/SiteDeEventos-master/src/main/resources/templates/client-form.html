@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>EventosApp</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div th:replace="@{fragments/navIndex} :: navbar"></div>
+
+	<div class="container">
+		<form th:action="@{/client/saveClient}" th:object="${client}"
+			method="POST">
+
+			<div class="form-group">
+				<label for="clientName">Nome</label> <input type="text"
+					class="form-control" id="clientName"
+					placeholder="Digite o nome do cliente" th:field="*{name}" />
+			</div>
+
+			<div class="form-group">
+				<label for="clientCpf">Cpf</label> <input type="text"
+					class="form-control" id="clientCpf"
+					placeholder="Digite o cpf do cliente" th:field="*{cpf}" />
+			</div>
+
+			<div class="form-group">
+				<label for="clientBirthDate">Data de Nascimento</label> 
+				<input  type="date" class="form-control" placeholder="Digite a data de Nascimento"
+					id="clientBirthDate" th:field="*{birthDate}" />
+			</div>  
+
+			<div class="form-group">
+				<label for="clientEmail">Email</label> <input type="text"
+					class="form-control" id="clientEmail"
+					placeholder="Digite o email do cliente" th:field="*{email}" />
+			</div>
+
+			<div class="form-group">
+				<label for="username">Username</label> <input type="text"
+					class="form-control" id="username"
+					placeholder="Digite o username do cliente" th:field="*{username}" />
+			</div>
+
+			<div class="form-group">
+				<label for="password">Password</label> <input type="password"
+					class="form-control" id="password"
+					placeholder="Digite a senha do cliente" th:field="*{password}" />
+			</div>
+
+			<div class="form-group">
+				<label >Cliente ou Empresa de Eventos ?</label>
+				<ul class="form-control">
+					<label for="radioButton1">Cliente</label> <li><input type="radio"  id="radioButton1"
+						value="Cliente" name="radioButton" th:field="*{type}" /></li>
+					<label for="radioButton2">Empresa</label><li><input type="radio"  id="radioButton2"
+						value="Empresa" name="radioButton" th:field="*{type}" th:value="EVENTMAKER"/></li>
+				</ul>
+			</div>
+
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</body>
+</html>

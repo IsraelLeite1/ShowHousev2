@@ -15,7 +15,7 @@ As empresas ou entidades poderão se cadastrar na plataforma web:
 
 
 Os usuários terão acesso, onde poderão:
-- navegar para ver os eventos cadastradas
+- navegar para ver os eventos cadastrados
 
 🚧 Em construção... 🚧
 
